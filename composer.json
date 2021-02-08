@@ -1,0 +1,27 @@
+{
+    "name": "ps14/kingdom",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "Christian Pschorr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^10.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ps14\\Kingdom\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ps14\\Kingdom\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "typo3-ter/kingdom": "self.version"
+    }
+}

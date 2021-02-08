@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:kingdom/Resources/Private/Language/locallang" date="2021-02-08T22:25:12Z" product-name="kingdom">
+		<header/>
+		<body>
+			<trans-unit id="tx_kingdom_domain_model_entity" resname="tx_kingdom_domain_model_entity">
+				<source>Entity</source>
+			</trans-unit>
+			<trans-unit id="tx_kingdom_domain_model_entity.title" resname="tx_kingdom_domain_model_entity.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_kingdom_domain_model_entity.identifier" resname="tx_kingdom_domain_model_entity.identifier">
+				<source>Identifier</source>
+			</trans-unit>
+			<trans-unit id="tx_kingdom_domain_model_entity.description" resname="tx_kingdom_domain_model_entity.description">
+				<source>Description</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
