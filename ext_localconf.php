@@ -1,25 +1,23 @@
 <?php
 defined('TYPO3_MODE') || die();
 
-call_user_func(
-    function()
-    {
+call_user_func(function() {
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+		'Kingdom',
+		'Frontend',
+		[
+			\Ps14\Kingdom\Controller\GameController::class => 'index',
+			\Ps14\Kingdom\Controller\EntityController::class => 'list, show'
+		],
+		[
+			\Ps14\Kingdom\Controller\GameController::class => 'index',
+			\Ps14\Kingdom\Controller\EntityController::class => ''
+		]
+	);
 
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'Kingdom',
-            'Frontend',
-            [
-                \Ps14\Kingdom\Controller\EntityController::class => 'list, show'
-            ],
-            // non-cacheable actions
-            [
-                \Ps14\Kingdom\Controller\EntityController::class => ''
-            ]
-        );
-
-        // wizards
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-            'mod {
+	// wizards
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+		'mod {
                 wizards.newContentElement.wizardItems.plugins {
                     elements {
                         frontend {
@@ -35,14 +33,14 @@ call_user_func(
                     show = *
                 }
            }'
-        );
-		$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-		
-			$iconRegistry->registerIcon(
-				'kingdom-plugin-frontend',
-				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-				['source' => 'EXT:kingdom/Resources/Public/Icons/user_plugin_frontend.svg']
-			);
-		
-    }
+	);
+	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+
+	$iconRegistry->registerIcon(
+		'kingdom-plugin-frontend',
+		\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+		['source' => 'EXT:kingdom/Resources/Public/Icons/user_plugin_frontend.svg']
+	);
+
+}
 );
