@@ -6,6 +6,7 @@ call_user_func(function() {
 		'Kingdom',
 		'Frontend',
 		[
+			\Ps14\Kingdom\Controller\ScenarioController::class => 'index',
 			\Ps14\Kingdom\Controller\GameController::class => 'index',
 			\Ps14\Kingdom\Controller\EntityController::class => 'list, show'
 		],
@@ -15,32 +16,28 @@ call_user_func(function() {
 		]
 	);
 
-	// wizards
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-		'mod {
-                wizards.newContentElement.wizardItems.plugins {
-                    elements {
-                        frontend {
-                            iconIdentifier = kingdom-plugin-frontend
-                            title = LLL:EXT:kingdom/Resources/Private/Language/locallang_db.xlf:tx_kingdom_frontend.name
-                            description = LLL:EXT:kingdom/Resources/Private/Language/locallang_db.xlf:tx_kingdom_frontend.description
-                            tt_content_defValues {
-                                CType = list
-                                list_type = kingdom_frontend
-                            }
-                        }
-                    }
-                    show = *
-                }
-           }'
+	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+		'Kingdom',
+		'Scenario',
+		[
+			\Ps14\Kingdom\Controller\ScenarioController::class => 'index',
+		],
+		[]
 	);
-	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 
+	// -------------------------------------------------------------------------------------------------------------------
+	// PageTs
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+		'<INCLUDE_TYPOSCRIPT: source="FILE:EXT:kingdom/Configuration/TSConfig/Page.typoscript">'
+	);
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// Icons
+	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 	$iconRegistry->registerIcon(
 		'kingdom-plugin-frontend',
 		\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-		['source' => 'EXT:kingdom/Resources/Public/Icons/user_plugin_frontend.svg']
+		['source' => 'EXT:kingdom/Resources/Public/Icons/plugin_frontend.svg']
 	);
-
 }
 );

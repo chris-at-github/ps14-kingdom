@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:kingdom/Resources/Private/Language/locallang_plugin" date="2022-04-22T22:50:00Z" product-name="kingdom">
+		<header/>
+		<body>
+			<trans-unit id="scenario.name">
+				<source>Kingdom Scenario</source>
+			</trans-unit>
+			<trans-unit id="scenario.description">
+				<source>Collection of avialible scenarios and screens</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

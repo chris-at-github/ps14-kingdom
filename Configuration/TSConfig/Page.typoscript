@@ -1,0 +1,16 @@
+mod {
+	wizards.newContentElement.wizardItems.plugins {
+		elements {
+			kingdom_scenario {
+				iconIdentifier = kingdom-plugin-frontend
+				title = LLL:EXT:kingdom/Resources/Private/Language/locallang_plugin.xlf:scenario.name
+				description = LLL:EXT:kingdom/Resources/Private/Language/locallang_plugin.xlf:scenario.description
+				tt_content_defValues {
+					CType = list
+					list_type = kingdom_scenario
+				}
+			}
+		}
+		show = *
+	}
+}
