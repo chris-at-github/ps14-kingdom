@@ -20,7 +20,7 @@ call_user_func(function() {
 		'Kingdom',
 		'Scenario',
 		[
-			\Ps14\Kingdom\Controller\ScenarioController::class => 'index',
+			\Ps14\Kingdom\Controller\ScenarioController::class => 'listing',
 		],
 		[]
 	);

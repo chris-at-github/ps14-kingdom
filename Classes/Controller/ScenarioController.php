@@ -21,6 +21,6 @@ class ScenarioController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 	/**
 	 * @return void
 	 */
-	public function indexAction() {
+	public function listingAction() {
 	}
 }
